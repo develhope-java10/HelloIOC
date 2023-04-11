@@ -15,9 +15,9 @@ public class Car {
 
     private final float carWeight;
 
-    public Car(float carWeight) {
+    public Car() {
         this.currentSpeed = 0.0f;
-        this.carWeight = carWeight;
+        this.carWeight = 100.0f;
     }
 
     public void accelerate() {
