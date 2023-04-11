@@ -1,19 +1,23 @@
-package com.develhope.java10.hellodependencyinjection;
+package com.develhope.java10.helloioc;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
-    private IEngine engine;
-    private IBrakes brakes;
+    @Autowired
+    private Engine engine;
+
+    @Autowired
+    private Brakes brakes;
 
     private float currentSpeed;
 
     private final float carWeight;
 
-    public Car(IEngine engine, IBrakes brakes, float carWeight) {
+    public Car(float carWeight) {
         this.currentSpeed = 0.0f;
         this.carWeight = carWeight;
-
-        this.engine = engine;
-        this.brakes = brakes;
     }
 
     public void accelerate() {
